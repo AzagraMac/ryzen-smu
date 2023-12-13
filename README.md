@@ -72,6 +72,7 @@ The kernel module may be installed either by DKMS or manually building and inser
 
 Be sure kernel headers, dev utilities such as `gcc` and `make` are installed beforehand.
 
+
 ### Ubuntu / Debian
 
 ```sh
@@ -82,6 +83,7 @@ cd ryzen_smu
 sudo make dkms-install
 ```
 
+
 ### Arch Linux
 
 Available on the [AUR](https://aur.archlinux.org/packages/ryzen_smu-dkms-git/).
@@ -91,6 +93,7 @@ Install it using your AUR helper of choice, example:
 ```sh
 yay -S ryzen_smu-dkms-git
 ```
+
 
 ### Stand-alone Installation
 
@@ -103,6 +106,7 @@ cd ryzen_smu
 make
 sudo insmod ryzen_smu.ko
 ```
+
 
 ## Auto-Loading On System Startup
 
@@ -117,6 +121,7 @@ Example:
 # Load ryzen_smu driver upon startup
 ryzen_smu
 ```
+
 
 ## Confirming Module Works
 
@@ -133,7 +138,7 @@ Upon loading the module, you should see output in your `dmesg` window listing th
 
 After which you can verify the existence of the sysfs files and attempt to read them:
 
-```
+```sh
 # ls -lah /sys/kernel/ryzen_smu_drv
 total 0
 drwxr-xr-x  2 root root    0 May  7 03:01 ./
@@ -168,7 +173,7 @@ SMU v46.54.0
 Following which, you can run the [test.py script](scripts/test.py) to verify that SMU and SMN
 functionality is working:
 
-```
+```sh
 # python3 scripts/test.py
 Retrieved SMU Version: v46.54.0
 Processor Code Name: Matisse
